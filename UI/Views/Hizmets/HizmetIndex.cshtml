@@ -1,0 +1,30 @@
+﻿@using Entity.Concreate
+@model List<Hizmet>
+@{
+    ViewBag.Title = "HizmetIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hizmetlerimiz</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Hizmet Adı</th>
+            <th>Hizmet Açıklaması</th>
+            <th>Fiyat</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.HizmetAdi</td>
+                <td>@item.Aciklama</td>
+                <td>@item.Fiyat</td>
+            </tr>
+        }
+    </tbody>
+
+    
+</table>

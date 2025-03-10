@@ -13,10 +13,8 @@ namespace Entity.Concreate
         public string MusteriSoyadi { get; set; }
         public string Telefon { get; set; }
         public string Email { get; set; }
-        public string Adres { get; set; }
         public bool kayitlimi { get; set; }
         public string Sifre { get; set; }
-
 
         public ICollection<Siparis> Siparis { get; set; }
     }

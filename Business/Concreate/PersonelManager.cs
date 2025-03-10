@@ -1,10 +1,12 @@
 ﻿using Business.Abstract;
 using Data.Abstract;
+using Data.EntityFramework;
 using Entity.Concreate;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -38,6 +40,10 @@ namespace Business.Concreate
         public void Update(Personel p)
         {
             _personelDal.Update(p);
+        }
+        public Personel GetById(Expression<Func<Personel, bool>> filter)
+        {
+            return _personelDal.GetById(filter);
         }
     }
 }

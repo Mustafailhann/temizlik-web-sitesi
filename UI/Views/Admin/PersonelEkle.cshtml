@@ -1,0 +1,44 @@
+﻿@model Entity.Concreate.Personel
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("PersonelEkle", "Admin", FormMethod.Post))
+{
+    <h2>Yeni Personel Ekle</h2>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PersonelAdi, htmlAttributes: new { @class = "control-label" })
+        @Html.TextBoxFor(model => model.PersonelAdi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.PersonelAdi, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PersonelSoyadi, htmlAttributes: new { @class = "control-label" })
+        @Html.TextBoxFor(model => model.PersonelSoyadi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.PersonelSoyadi, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Telefon, htmlAttributes: new { @class = "control-label" })
+        @Html.TextBoxFor(model => model.Telefon, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Hizmet.HizmetAdi, htmlAttributes: new { @class = "control-label" })
+        @Html.TextAreaFor(model => model.Hizmet.HizmetAdi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Hizmet.HizmetAdi, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.RolId, htmlAttributes: new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.RolId, (SelectList)ViewBag.RolListesi, "Rol Seçiniz", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.RolId, "", new { @class = "text-danger" })
+    </div>
+
+
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-success">Kaydet</button>
+    </div>
+}

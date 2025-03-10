@@ -4,6 +4,7 @@ using Entity.Concreate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,11 @@ namespace Business.Concreate
         public void Delete(Hizmet h)
         {
             _hizmetDal.Delete(h);
+        }
+
+        public Hizmet GetById(Expression<Func<Hizmet, bool>> filter)
+        {
+            return _hizmetDal.GetById(filter);
         }
 
         public List<Hizmet> HizmetListele()

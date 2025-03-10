@@ -15,5 +15,6 @@ namespace Data.Concreate
         public DbSet<Musteri> Musteriler { get; set; }
         public DbSet<Siparis> Siparisler { get; set; }
         public DbSet<Yorum> Yorumlar { get; set; }
+        public DbSet<Rol> Roller { get; set; }
     }
 }

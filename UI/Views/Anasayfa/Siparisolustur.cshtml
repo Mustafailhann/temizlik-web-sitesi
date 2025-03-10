@@ -1,0 +1,84 @@
+﻿@using UI.Models
+@model HomeViewModel
+
+@{
+    ViewBag.Title = "Siparisolustur";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Siparisolustur</h2>
+
+
+    <!-- end review -->
+    <div id="request" class="contact">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padding-left1">
+                    <div class="contact">
+                        <div class="titlepage">
+                            <h2>SİPARİŞ KAYDI OLUŞTUR</h2>
+                        </div>
+                        <form class="request" method="post" action="@Url.Action("Siparisolustur", "Anasayfa")">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input class="contactus" placeholder="Ad" type="text" name="MusteriAdi">
+                                </div>
+                                <div class="col-sm-12">
+                                    <input class="contactus" placeholder="Soyad" type="text" name="MusteriSoyadi">
+                                </div>
+                                <div class="col-sm-12">
+                                    <input class="contactus" placeholder="Telefon Numarası" type="text" name="Telefon">
+                                </div>
+                                <div class="col-sm-12">
+                                    <input class="contactus" placeholder="Mail Adresi" type="email" name="Email">
+                                </div>
+                                <div class="col-sm-12">
+                                    <input class="contactus" placeholder=" Adres" type="text" name="Adres">
+                                </div>
+
+                                <form method="get">
+                                    <div class="col-sm-12">
+                                        <label for="ServiceId"></label>
+                                        <select class="contactus" id="ServiceId" name="hizmetId">
+                                            <option value="">Hizmet Seçiniz</option>
+                                            @foreach (var hizmet in Model.Hizmetler)
+                                            {
+                                                <option value="@hizmet.HizmetId" @(Model.secilihizmetid == hizmet.HizmetId ? "selected" : "")>
+                                                    @hizmet.HizmetAdi
+                                                </option>
+                                            }
+                                        </select>
+                                    </div>
+                                </form>
+
+                                @if (Model.Personeller.Any())
+                                {
+                                    <div class="col-sm-12">
+                                        <label for="PersonelId">Personel Seçiniz:</label>
+                                        <select class="contactus" id="PersonelId" name="PersonelId">
+                                            <option value="">Personel Seçiniz</option>
+                                            @foreach (var personel in Model.Personeller)
+                                            {
+                                                <option value="@personel.PersonelId">@personel.PersonelAdi</option>
+                                            }
+                                        </select>
+                                    </div>
+                                }
+                                <div class="col-sm-12">
+                                    <input class="contactus" placeholder="Tarih" type="date" name="Tarih">
+                                </div>
+                                <div class="col-sm-12">
+                                    <button class="send">SİPARİŞ TALEBİ OLUŞTUR</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padding-right1">
+                    <div id="map">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

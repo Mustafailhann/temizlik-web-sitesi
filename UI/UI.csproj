@@ -127,11 +127,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AnasayfaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +152,7 @@
     <Content Include="better-clean\icon\2.png" />
     <Content Include="better-clean\images\2.png" />
     <Content Include="better-clean\images\anasayfaresim.png" />
+    <Content Include="better-clean\images\anasayfaresim2.png" />
     <Content Include="better-clean\images\araba2.png" />
     <Content Include="better-clean\images\arabatemizlik.png" />
     <Content Include="better-clean\images\c.png" />
@@ -230,8 +233,20 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Anasayfa\About.cshtml" />
     <Content Include="Views\Anasayfa\Contact.cshtml" />
-    <Content Include="Views\Anasayfa\Index.cshtml" />
     <Content Include="Views\Hizmets\HizmetIndex.cshtml" />
+    <Content Include="Views\Anasayfa\Siparisolustur.cshtml" />
+    <Content Include="Views\Anasayfa\Kayitol.cshtml" />
+    <Content Include="Views\Anasayfa\Login.cshtml" />
+    <Content Include="Views\Admin\YoneticiAnasayfa.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\AdminGiris.cshtml" />
+    <Content Include="Views\Anasayfa\Index.cshtml" />
+    <Content Include="Views\Admin\PersonelAnasayfa.cshtml" />
+    <Content Include="Views\Admin\SiparisGoruntule.cshtml" />
+    <Content Include="Views\Admin\PersonelGoruntule.cshtml" />
+    <Content Include="Views\Admin\HizmetGoruntule.cshtml" />
+    <Content Include="Views\Admin\HizmetEkle.cshtml" />
+    <Content Include="Views\Admin\PersonelEkle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

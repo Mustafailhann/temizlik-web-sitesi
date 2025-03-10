@@ -6,6 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Data.Concreate
 {
@@ -50,6 +51,9 @@ namespace Data.Concreate
             return _obje.Where(filter).ToList();
         }
 
-        
+        public T GetById(Expression<Func<T, bool>> filter)
+        {
+            return _obje.FirstOrDefault(filter);
+        }
     }
 }

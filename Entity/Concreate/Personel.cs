@@ -17,7 +17,7 @@ namespace Entity.Concreate
         public string sifre { get; set; }
         public int RolId { get; set; }
         public string Telefon { get; set; }
-        public int HizmetId { get; set; }
+        public int? HizmetId { get; set; }
         public virtual Rol Rol { get; set; }
         public virtual Hizmet Hizmet { get; set; }
         public ICollection<Siparis> Siparis { get; set; }

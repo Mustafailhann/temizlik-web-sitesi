@@ -1,0 +1,42 @@
+﻿@model  Entity.Concreate.Musteri
+@{
+    ViewBag.Title = "Kayitol";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/better-clean/css/animate.min.css" />
+<h2>Kayıt Ol</h2>
+
+@using (Html.BeginForm("Kayitol", "Anasayfa", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.MusteriAdi)
+        @Html.TextBoxFor(m => m.MusteriAdi, new { @class = "form-control", placeholder = "Ad" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MusteriSoyadi)
+        @Html.TextBoxFor(m => m.MusteriSoyadi, new { @class = "form-control", placeholder = "Soyad" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Telefon)
+        @Html.TextBoxFor(m => m.Telefon, new { @class = "form-control", placeholder = "Telefon Numarası" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email Adresi" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Sifre)
+        @Html.TextBoxFor(m => m.Sifre, new { @class = "form-control", placeholder = "sifre" })
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+    </div>
+}
+
+

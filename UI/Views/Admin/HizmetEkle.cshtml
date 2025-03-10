@@ -1,0 +1,32 @@
+﻿@model Entity.Concreate.Hizmet
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("HizmetEkle", "Admin", FormMethod.Post))
+{
+    <h2>Yeni Hizmet Ekle</h2>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.HizmetAdi, htmlAttributes: new { @class = "control-label" })
+        @Html.TextBoxFor(model => model.HizmetAdi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.HizmetAdi, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Aciklama, htmlAttributes: new { @class = "control-label" })
+        @Html.TextAreaFor(model => model.Aciklama, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Aciklama, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Fiyat, htmlAttributes: new { @class = "control-label" })
+        @Html.TextBoxFor(model => model.Fiyat, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Fiyat, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-success">Kaydet</button>
+    </div>
+}
+

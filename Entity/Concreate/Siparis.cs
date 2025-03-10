@@ -13,9 +13,13 @@ namespace Entity.Concreate
         public int PersonelId { get; set; }
         public string MusteriAdi { get; set; }
         public string MusteriSoyadi {  get; set; }
-        public DateTime Tarih {  get; set; }
+        public string Adres { get; set; }
+        public DateTime teslimTarih {  get; set; }
+        public DateTime siparisTarih { get; set; }
+        public bool siparisDurum { get; set; } // iletişime geçilip geçilmemesi
         public virtual Musteri Musteri { get; set; }
         public virtual Personel Personel { get; set; }
         public ICollection<Yorum> Yorum { get; set; }
+
     }
 }

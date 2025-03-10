@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,5 +14,6 @@ namespace Business.Abstract
         void Insert(Personel p);
         void Delete(Personel p);
         void Update(Personel p);
+        Personel GetById(Expression<Func<Personel, bool>> filter);
     }
 }

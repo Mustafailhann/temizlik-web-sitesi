@@ -1,0 +1,30 @@
+﻿@model Entity.Concreate.Personel
+@{
+    Layout = null;
+}
+
+
+<h2>Admin Giriş</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.LabelFor(m => m.kullaniciAdi)
+        @Html.TextBoxFor(m => m.kullaniciAdi)
+        @Html.ValidationMessageFor(m => m.kullaniciAdi)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.sifre)
+        @Html.PasswordFor(m => m.sifre)
+        @Html.ValidationMessageFor(m => m.sifre)
+    </div>
+
+    <div>
+        <input type="submit" value="Giriş Yap" />
+    </div>
+
+    @Html.ValidationSummary(true)
+}
